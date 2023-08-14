@@ -11,6 +11,32 @@
   </head>
 
   <body>
+   <header class="header">
+      <div class="head_name">
+        
+       <%= link_to root_path do %>
+         <%= image_tag("hospil_logo.png", alt: "会社ロゴ", class: "company_logo") %>
+       <% end %>
+
+        <%# <h1 class="cite_name"><a href="/">Hospil</a></h1> %>
+        <div class="top_button">
+          <div class="top_button_content">利用方法</div>
+          <div class="top_button_content">よくあるご質問</div>
+          <div class="top_button_content">予約履歴を見る</div>
+          <div class="top_button_content">マイページ</div>
+          <div class="top_button_content" >ログイン</div>
+          <div class="top_button_content">新規登録</div>
+        </div>
+      </div>
+    </header>
+
     <%= yield %>
+     <footer>
+      <div class ="footer_content">
+        <p>
+          Copyright Hospil 2023.
+        </p>
+          <div class="btn_detail"> <a href=# class="btn-content">お電話はこちら</a></div>
+    </footer>
   </body>
 </html>
