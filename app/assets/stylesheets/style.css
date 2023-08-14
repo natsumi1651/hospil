@@ -34,18 +34,22 @@ header{
 }
 
 .top_button{
-  width: 100px;
-  height: 60px;
-  background-color: #663300;
   display:flex;
-  justify-content: space-between;
+ 
 }
 
 .top_button_content{
-  
-  padding: 10px 15px; /* 必要な余白を設定 */
+  width: 150px;
+  height: 60px;
+  background-color: #663300;
+  padding: 10px 15px; 
   text-decoration: none;
   color: #fff;
+  margin-left: 10px;
+  border-radius: 100vh;
+  display: flex; 
+  align-items: center;
+  justify-content: center;
 }
 
 .cite_name {
@@ -123,6 +127,13 @@ header{
   font-size: 30px;
   margin-top: 60px;
 }
+
+.top-image_sec{
+  width: 500px;
+  height: 300px;
+  margin-top: 50px;
+}
+
 
 footer {
   width: 100vw;
