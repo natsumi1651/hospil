@@ -1,9 +1,42 @@
- <%= form_with(model: @request, local: true) do |form| %>
-      <%= form.text_field :title, placeholder: "件名" %>
-      <%= form.text_field :date, placeholder: "希望日時" %>
-      <%= form.text_area :description, placeholder: "主訴や、予約の内容を入れてください。", rows: "30" %>
-      <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
-      <%= form.text_field :expected_length, placeholder: "希望時間/2時間" %>
-      <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "10" %>
-      <%= form.submit "SEND" %>
- <% end %>
+ <div class="body_entire">
+   <div class="form_entire">
+    <h3>予約をする</h3>
+      <%= form_with model: @request, url: requests_path, class: 'registration-main', local: true do |form| %>
+        <div class="form-contents">
+          <div class ="form-content">
+            <%= form.text_field :title, placeholder: "件名" %>
+           </div>
+        </div>
+        <div class="form-wrap">
+          <div class ="form-group">
+            <%= form.text_field :date, placeholder: "希望日時" %>
+           </div>
+        </div>
+        <div class="form-wrap">
+          <div class ="form-group">
+             <%= form.text_area :description, placeholder: "主訴や、予約の内容を入れてください。", rows: "30" %>
+           </div>
+        </div>
+        <div class="form-wrap">
+          <div class ="form-group">
+             <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
+           </div>
+        </div>   
+        <div class="form-wrap">
+          <div class ="form-group">
+             <%= form.text_field :expected_length, placeholder: "希望時間/2時間" %>
+           </div>
+        </div>    
+        <div class="form-wrap">
+          <div class ="form-group">
+             <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "10" %>
+           </div>
+        </div>
+         <div class="form-wrap">
+          <div class ="form-group">
+            <%= form.submit "SEND" %>
+           </div>
+        </div>   
+      <% end %>
+    </div>
+</div>
