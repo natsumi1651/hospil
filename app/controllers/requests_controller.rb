@@ -8,13 +8,13 @@ class RequestsController < ApplicationController
   end
 
   def create
-    Request.create(request_params)
+    @request = Request.create(request_params)
     redirect_to '/'
   end
 
   private
   def request_params
-    params.require(:request).permit(:title, :date, :dexcription, :expected_length, :expected_place)
+    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
   end
 
 end
