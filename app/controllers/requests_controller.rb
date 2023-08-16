@@ -14,8 +14,24 @@ class RequestsController < ApplicationController
   end
 
   def show
-    # @request = Request.find(params[:id])
+    @request = Request.find(params[:id])
     
+  end
+
+  def destroy
+    request = Request.find(params[:id])
+    request.destroy
+    redirect_to root_path
+  end
+
+  def edit
+    @request = Request.find(params[:id])
+  end
+
+  def update
+    request = Request.find(params[:id])
+    request.update(request_params)
+    redirect_to root_path
   end
 
   private

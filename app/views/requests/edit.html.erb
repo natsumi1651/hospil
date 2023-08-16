@@ -1,0 +1,17 @@
+<div class="body_entire">
+  <div class ="body_flex">
+   <div class="form_entire">
+     <h3>編集する</h3>
+      <%= form_with(model: @request, local: true) do |form| %>
+        <%= form.text_field :title, placeholder: "件名" %><br>
+        <%= form.text_field :date, placeholder: "希望日時" %><br>
+        <%= form.text_area :description, placeholder: "主訴や、予約の内容を入れてください。", rows: "30" %><br>
+        <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
+        <%= form.text_field :expected_length, placeholder: "希望時間/2時間" %><br>
+        <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "10" %><br>
+        <%= form.submit "SEND" %>
+      <% end %>
+    </div>
+
+  </div>
+</div>

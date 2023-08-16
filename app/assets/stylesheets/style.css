@@ -197,3 +197,12 @@ a.btn-white {
   margin: 0 auto;
   padding: 80px 0;
 }
+
+
+.request_reference{
+
+}
+
+.request.detail {
+  font-weight: bolder;
+}
