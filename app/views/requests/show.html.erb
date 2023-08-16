@@ -1,16 +1,17 @@
+<div class="body_entire">
+  <div class ="body_flex">
+    <div class='request_reference'>
+      <div class ='request_detail'>
+              <div class="request_title">
+                <%= @request.title %>
+              </div>
+              <%= @request.date %>
+              <%= @request.description %> 
+              <%= @request.expected_length %> 
+              <%= @request.expected_place %> 
+      </div>
 
-<div class='request_reference'>
-  <div class ='request_detail'>
-          <div class="request_title">
-             <%= @request.title %>
-          </div>
-          <%= @request.date %>
-          <%= @request.description %> 
-          <%= @request.expected_length %> 
-          <%= @request.expected_place %> 
-  </div>
-
-  <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "show-image") %>
-
-
-</div>
+      <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "show-image") %>
+    </div>
+   </div>
+ </div>

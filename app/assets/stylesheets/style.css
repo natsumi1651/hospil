@@ -22,7 +22,6 @@ a {
 .header{
   width: 100vw;
   height: 100px;
-  
 }
 
 .head_name {
@@ -54,6 +53,7 @@ a {
 
 .body_entire {
   width: 100vw;
+  height: 100vh;
   font-size: 10px;
   background-color: #FFFFDD;
   padding-bottom: 150px;
@@ -122,8 +122,7 @@ a {
 }
 
 .third_statement {
-  font-size: 100px;
-  color: #663300;
+  font-size: 20px;
 }
 
 .second_statement{
@@ -139,34 +138,49 @@ a {
 
 .schedule_entire{
  display: flex;
+ align-items: center;
+ flex-direction: column;
 }
 
 
 .schedule_bracket {
-  font-size: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+  padding-bottom: 20px;
 }
 
-.footer {
+.schedule_button{
+  width: 100px;
+  height: 30px;
+  background-color: #663300;
+  font-weight: bolder;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.schedule_content{
+  color: #fff;
+  font-size: 20px; 
+}
+
+
+
+.footer_content {
   width: 100vw;
   height: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #660000	;
   bottom: 0;
   padding: 10px;
+  position: fixed;
 }
 
 .footer_statements{
-  font-size: 60px;
-}
-
-.footer_content {
-  color: #FFFFDD;
-  font-weight: bolder;
-  justify-content: space-between;
-  display: flex;
-  padding-right: 200px;
-  margin: 0 auto;
+  font-size: 20px;
+  color: #fff;
 }
 
 .btn_detail{
@@ -181,16 +195,6 @@ a {
   font-size: 20px;
   padding-top: 10px;
 }
-
-
-
-/* .request_entire{
-  width: 100vw;
-  font-size: 10px;
-  background-color: #FFFFDD;
-  padding-bottom: 150px;
-  overflow: auto;
-} */
 
 .form_entire {
   width: 700px;
