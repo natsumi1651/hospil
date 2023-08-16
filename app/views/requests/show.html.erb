@@ -1,7 +1,7 @@
 
 <div class='request_reference'>
-  <div class ='reference_detail'>
-          <div class="reference_title">
+  <div class ='request_detail'>
+          <div class="request_title">
              <%= @request.title %>
           </div>
           <%= @request.date %>
@@ -9,4 +9,8 @@
           <%= @request.expected_length %> 
           <%= @request.expected_place %> 
   </div>
+
+  <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "show-image") %>
+
+
 </div>

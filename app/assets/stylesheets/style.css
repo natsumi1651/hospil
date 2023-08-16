@@ -60,6 +60,8 @@ a {
   overflow: auto;
 }
 
+
+
 .body_flex{
   display: flex;
 }
@@ -118,8 +120,10 @@ a {
   width: 800px;
   height: 500px;
 }
+
 .third_statement {
   font-size: 100px;
+  color: #663300;
 }
 
 .second_statement{
@@ -138,7 +142,7 @@ a {
 }
 
 
-.suchedule_bracket {
+.schedule_bracket {
   font-size: 10px;
 }
 
@@ -173,24 +177,20 @@ a {
   display: flex;
   text-align: center;
   justify-content: center;
-}
-
-.btn-content,
-a.btn-white {
   color: black;
   font-size: 20px;
   padding-top: 10px;
 }
 
 
-.request_entire{
+
+/* .request_entire{
   width: 100vw;
   font-size: 10px;
   background-color: #FFFFDD;
   padding-bottom: 150px;
   overflow: auto;
-
-}
+} */
 
 .form_entire {
   width: 700px;
@@ -203,10 +203,15 @@ a.btn-white {
 
 }
 
-.request.detail {
+.request_detail {
  
 }
 
-.reference_title{
+.request_title{
   font-size: 20px;
+}
+
+.show-image{
+  width: 100px;
+  height: 80px;
 }
