@@ -52,13 +52,12 @@ a {
   justify-content: center;
 }
 
-.body_entire{
+.body_entire {
   width: 100vw;
   font-size: 10px;
   background-color: #FFFFDD;
   padding-bottom: 150px;
   overflow: auto;
-  /* box-sizing: border-box;  */
 }
 
 .body_flex{
@@ -113,18 +112,20 @@ a {
 .image_custom {
  display: flex;
  align-items: center;
-
 }
 
 .top-image{
   width: 800px;
   height: 500px;
 }
+.third_statement {
+  font-size: 100px;
+}
 
 .second_statement{
   font-size: 20px;
-
 }
+
 
 .top-image_sec{
   width: 500px;
@@ -132,6 +133,14 @@ a {
   margin-top: 50px;
 }
 
+.schedule_entire{
+ display: flex;
+}
+
+
+.suchedule_bracket {
+  font-size: 10px;
+}
 
 .footer {
   width: 100vw;
@@ -139,7 +148,6 @@ a {
   align-items: center;
   justify-content: center;
   background-color: #660000	;
-  /* position: fixed; */
   bottom: 0;
   padding: 10px;
 }
@@ -155,7 +163,6 @@ a {
   display: flex;
   padding-right: 200px;
   margin: 0 auto;
-  /* padding-top: 10px; */
 }
 
 .btn_detail{
@@ -175,14 +182,6 @@ a.btn-white {
   padding-top: 10px;
 }
 
-/* 予約フォームページ */
-
-/* .body_details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-} */
 
 .request_entire{
   width: 100vw;
@@ -190,12 +189,11 @@ a.btn-white {
   background-color: #FFFFDD;
   padding-bottom: 150px;
   overflow: auto;
-  /* box-sizing: border-box;  */
+
 }
 
 .form_entire {
   width: 700px;
   margin: 0 auto;
   padding: 80px 0;
-  
 }
