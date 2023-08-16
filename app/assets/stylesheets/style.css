@@ -204,5 +204,9 @@ a.btn-white {
 }
 
 .request.detail {
-  font-weight: bolder;
+ 
+}
+
+.reference_title{
+  font-size: 20px;
 }
