@@ -7,6 +7,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+   
     <%= javascript_importmap_tags %>
   </head>
 
@@ -18,9 +20,9 @@
          <%= image_tag("hospil_logo.png", alt: "会社ロゴ", class: "company_logo") %>
        <% end %>
 
-        <%# <h1 class="cite_name"><a href="/">Hospil</a></h1> %>
         <div class="top_button">
-          <a class="top_button_content" href=# >利用方法</a>
+          <%= link_to "予約する", new_request_path, class: "top_button_content" %> 
+          <%# <%= link_to "予約履歴を見る", request_path(@request), class: "top_button_content" %>
           <a class="top_button_content" href=#>よくあるご質問</a>
           <a class="top_button_content" href=#>予約履歴を見る</a>
           <a class="top_button_content" href=#>マイページ</a>
@@ -33,9 +35,7 @@
     <%= yield %>
      <footer>
       <div class ="footer_content">
-        <h2>
-          まずは、お気軽にお問い合わせください！
-        </h2>
+        <div class="footer_statements">まずは、お気軽にお問い合わせください！＞＞＞＞＞＞</div>
           <div class="btn_detail"> <a href=# class="btn-content">お電話はこちら</a></div>
     </footer>
   </body>

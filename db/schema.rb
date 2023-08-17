@@ -11,8 +11,12 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_08_14_042656) do
-  create_table "requests", charset: "utf8mb4", force: :cascade do |t|
-    t.string "name"
+  create_table "requests", charset: "utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.string "date", null: false
+    t.text "description", null: false
+    t.string "expected_length", null: false
+    t.text "expected_place", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -76,4 +76,6 @@ group :production do
 end
 
 gem 'pry-rails'
+gem 'sassc'
 gem 'sassc-rails'
+

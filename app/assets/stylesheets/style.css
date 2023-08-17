@@ -19,9 +19,9 @@ a {
 }
 
 
-header{
+.header{
   width: 100vw;
-  height: 100px; 
+  height: 100px;
 }
 
 .head_name {
@@ -51,15 +51,21 @@ header{
   justify-content: center;
 }
 
-.body_entire{
+.body_entire {
   width: 100vw;
-  height: 800px;
+  height: 100vh;
   font-size: 10px;
   background-color: #FFFFDD;
-  padding-top: 10px;
   padding-bottom: 150px;
   overflow: auto;
-  box-sizing: border-box; 
+}
+
+
+
+.body_flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main_part{
@@ -110,7 +116,6 @@ header{
 .image_custom {
  display: flex;
  align-items: center;
-
 }
 
 .top-image{
@@ -118,10 +123,14 @@ header{
   height: 500px;
 }
 
+.third_statement {
+  font-size: 20px;
+}
+
 .second_statement{
   font-size: 20px;
-
 }
+
 
 .top-image_sec{
   width: 500px;
@@ -129,26 +138,52 @@ header{
   margin-top: 50px;
 }
 
+.schedule_entire{
+ display: flex;
+ align-items: center;
+ flex-direction: column;
+}
 
-footer {
+
+.schedule_bracket {
+  font-size: 30px;
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+
+.schedule_button{
+  width: 100px;
+  height: 30px;
+  background-color: #663300;
+  font-weight: bolder;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.schedule_content{
+  color: #fff;
+  font-size: 20px; 
+}
+
+
+
+.footer_content {
   width: 100vw;
   height: 60px;
+  display: flex;
   align-items: center;
   justify-content: center;
   background-color: #660000	;
-  position: fixed;
   bottom: 0;
   padding: 10px;
+  position: fixed;
 }
 
-.footer_content {
-  color: #FFFFDD;
-  font-weight: bolder;
-  justify-content: space-between;
-  display: flex;
-  padding-right: 200px;
-  margin: 0 auto;
-  /* padding-top: 10px; */
+.footer_statements{
+  font-size: 20px;
+  color: #fff;
 }
 
 .btn_detail{
@@ -159,13 +194,70 @@ footer {
   display: flex;
   text-align: center;
   justify-content: center;
-}
-
-.btn-content,
-a.btn-white {
-  color: black;
-  font-size: 20px;
   padding-top: 10px;
 }
 
+.btn-content{
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+}
 
+.form_entire {
+  width: 700px;
+  margin-top: 50px;
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  background-color: white;
+  border: 1px solid #000;
+  
+}
+
+.entry_title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section_title{
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.entry_section{
+  width: 600px;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.section_button{
+  width: 200px;
+  height: 80px;
+  background-color: #663300;
+  font-weight: bolder;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.section_button_content{
+  font-size: 30px; 
+}
+
+/* .input[type="submit"] {
+  /* text-decoration: none; */
+
+
+.show_section{
+  width: 600px;
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #000;
+}
