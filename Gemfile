@@ -78,4 +78,5 @@ end
 gem 'pry-rails'
 gem 'sassc'
 gem 'sassc-rails'
+gem 'devise'
 
