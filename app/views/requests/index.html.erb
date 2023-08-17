@@ -29,7 +29,7 @@
     </div><br>
 
     <div class = "schedule_entire">
-        <div class="third_statement">=過去の予約一覧</div><br>
+        <div class="third_statement">＝過去の予約一覧＝</div><br>
           <% @requests.each do |request| %>
             
              <div class = "schedule_bracket">タイトル：
@@ -41,18 +41,9 @@
              </div>
               
                 <div class="schedule_button">
-                  <div class="schedule_content">
-                   <%= link_to '詳細', request_path(request.id) %> 
-                  </div>
-                </div>
-
-               <%# <div class="schedule_button">
-                <%= link_to '削除', request_path(request.id), data: { turbo_method: :delete } %>
-               <%# </div>  %>
-              
-               <%# <div class="schedule_button"> %>
-                 <%# <%= link_to '編集', edit_request_path(request.id) %> 
-               <%# </div> %>
+                   <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
+                </div> 
+                
           <% end %>   
      </div>
       

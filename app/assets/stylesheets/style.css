@@ -64,6 +64,8 @@ a {
 
 .body_flex{
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .main_part{
@@ -157,6 +159,7 @@ a {
   border-radius: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center; 
 }
 
 .schedule_content{
@@ -191,17 +194,36 @@ a {
   display: flex;
   text-align: center;
   justify-content: center;
+  padding-top: 10px;
+}
+
+.btn-content{
   color: black;
   font-size: 20px;
-  padding-top: 10px;
+  font-weight: bolder;
 }
 
 .form_entire {
   width: 700px;
-  margin: 0 auto;
+  margin-top: 50px;
   padding: 80px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border: 1px solid #000;
 }
 
+.entry_title{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.entry_section{
+  width: 650px;
+  text-align: center;
+}
 
 .request_reference{
 
