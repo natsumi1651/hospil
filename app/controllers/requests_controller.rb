@@ -1,4 +1,6 @@
 class RequestsController < ApplicationController
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @requests = Request.all
   end
@@ -39,4 +41,10 @@ class RequestsController < ApplicationController
     params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
   end
 
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
+  end
+  
 end
