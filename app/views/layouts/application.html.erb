@@ -26,8 +26,10 @@
           <a class="top_button_content" href=#>よくあるご質問</a>
           <a class="top_button_content" href=#>予約履歴を見る</a>
           <a class="top_button_content" href=#>マイページ</a>
-          <a class="top_button_content" href=#>ログイン</a>
-          <a class="top_button_content"href=#>新規登録</a>
+          <%= link_to "ログイン", new_user_session_path, class: "top_button_content" %> 
+          <%= link_to "新規登録", new_user_registration_path, class: "top_button_content" %> 
+      
+      
         </div>
       </div>
     </header>

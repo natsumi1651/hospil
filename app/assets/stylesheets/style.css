@@ -261,3 +261,32 @@ a {
   padding: 10px;
   border: 1px solid #000;
 }
+
+.login_form{
+  width: 350px;
+  height: 200px;
+  background: #fff;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_title{
+  font-size: 15px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+
+}
+
+.login_field{
+  font-size: 12px;
+
+
+}
+
+.login_content{
+  width: 250px;
+  height: 20px;
+  margin-bottom: 5px;
+}
