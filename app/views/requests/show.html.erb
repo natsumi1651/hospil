@@ -1,27 +1,45 @@
 <div class="body_entire">
   <div class ="body_flex">
-    <div class='request_reference'>
-      <div class ='request_detail'>
-              <div class="request_title">
-                <%= @request.title %>
-              </div>
-              <%= @request.date %>
-              <%= @request.description %> 
-              <%= @request.expected_length %> 
-              <%= @request.expected_place %> 
+    <div class="form_entire">
+          <div class ="entry_title">＜予約詳細＞</div>
+                  <div class="section_title">件名:
+                   <div class="show_section">              
+                    <%= @request.title %>
+                   </div>
+                  </div>
+                  <div class="section_title">希望日時:
+                   <div class="show_section">  
+                    <%= @request.date %>
+                   </div>
+                  </div>
+                  <div class="section_title">主訴や、詳細内容を入れてください:
+                   <div class="show_section"> 
+                    <%= @request.description %> 
+                   </div>
+                  </div>
+                  <div class="section_title">希望時間/2時間:
+                   <div class="show_section"> 
+                    <%= @request.expected_length %> 
+                    </div>
+                  </div>
+                  <div class="section_title">派遣先住所:
+                    <div class="show_section"> 
+                     <%= @request.expected_place %> 
+                    </div>
+                  </div>
 
-              <div class="schedule_button">
-                <%= link_to '削除', request_path(@request), class: "schedule_content", data: { turbo_method: :delete } %>
-              
-              </div> 
-              
-              <div class="schedule_button">
-                <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
-              </div>
-        
-      </div>
 
-      <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "show-image") %>
+                  <div class="schedule_button">
+                    <%= link_to '削除', request_path(@request), class: "schedule_content", data: { turbo_method: :delete } %>
+                  </div> <br>
+                  
+                  <div class="schedule_button">
+                    <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
+                  </div>
+            
+          </div>
     </div>
    </div>
  </div>
+
+ 

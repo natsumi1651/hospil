@@ -3,15 +3,27 @@
    <div class="form_entire">
       <%= form_with(model: @request, local: true) do |form| %>
         <div class ="entry_title">＜予約入力フォーム＞</div>
-         <%# <div class="section_title">件名: %>
-          <%= form.text_field :title, placeholder: "件名: 『息子がインフルエンザにかかっています。』", class: "entry_section" %><br>
-         <%# </div> %>
-          <%= form.text_field :date, placeholder: "希望日時: 『本日、2023/08/24。』", class: "entry_section" %><br>
-          <%= form.text_area :description, placeholder: "主訴や、予約の内容を入れてください。『3歳、男の子です。日曜日に小児科でインフルエンザと言われ、保育所で預かれないと言われました。午後に休養があるため看護をお願いしたいです。』", rows: "20", class: "entry_section" %><br>
+         <div class="section_title">件名:
+          <%= form.text_field :title, placeholder: "『息子がインフルエンザにかかっています。』", class: "entry_section" %>
+         </div>
+         <div class="section_title">希望日時:
+          <%= form.text_field :date, placeholder: "希望日時: 『本日、2023/08/24。』", class: "entry_section" %>
+         </div>
+         <div class="section_title">主訴や、詳細内容を入れてください:
+          <%= form.text_area :description, placeholder: "『3歳、男の子です。日曜日に小児科でインフルエンザと言われ、保育所で預かれないと言われました。午後に急用があるため看護をお願いしたいです。』", rows: "20", class: "entry_section" %>
+         </div>
           <%# <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %> 
-          <%= form.text_field :expected_length, placeholder: "希望時間/2時間: 『今日の午後13時から17時までの看護をお願いしたいです。』", class: "entry_section" %><br>
-          <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "5", class: "entry_section" %><br>
-          <%= form.submit "SEND", class: "entry_section" %>
+          <div class="section_title">希望時間/2時間: 
+          <%= form.text_field :expected_length, placeholder: "『今日の午後13時から17時までの看護をお願いしたいです。』", class: "entry_section" %>
+          </div>
+          <div class="section_title">派遣先住所:
+          <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "5", class: "entry_section" %>
+          </div>
+          
+          <div class="section_button">
+           <%= form.submit "SEND", class: "section_button_content" %>
+          </div> 
+
       <% end %>
     </div>
   </div>
