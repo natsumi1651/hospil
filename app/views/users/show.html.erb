@@ -1,0 +1,49 @@
+ <%# <div class="body_entire"> %>
+  <div class ="mypage_flex">
+
+      <div class="mypage_info">
+      登録情報
+       <div class="mypage_content">
+        <%= @user.nickname%> 
+       </div>
+       <div class="mypage_content">
+        <%= @user.email %> 
+       </div>
+       <div class="mypage_content"> 
+        <%= @user.sir_name%> 
+       </div>
+       <div class="mypage_content">
+        <%= @user.first_name%> 
+       </div>
+       <div class="mypage_content">
+        <%= @user.phone_number%> 
+       </div>
+       <div class="mypage_content">
+        <%= @user.address %> 
+       </div>
+      
+      </div>
+
+      <div class = "schedule_entire">
+            <div class="third_statement">＝過去の予約一覧＝</div><br>
+             <p><%= @nickname %>さんの投稿一覧</p>
+              <% @requests.each do |request| %>
+                
+                <div class = "schedule_bracket">タイトル：
+                    <%= request.title %>
+                </div>
+
+                <div class = "schedule_bracket">
+                  予約日:<%= request.date %>
+                </div>
+                  
+                    <div class="schedule_button">
+                      <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
+                    </div> 
+              
+              <% end %>   
+      </div>
+  </div>
+<%# </div> %>
+
+

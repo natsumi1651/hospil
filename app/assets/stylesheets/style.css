@@ -138,10 +138,30 @@ a {
   margin-top: 50px;
 }
 
+.mypage_flex{
+ display: flex;
+ 
+
+}
+
+.mypage_info{
+  width: 400px;
+  height: 100vh;
+  background-color: #F5DEB3;
+
+}
+
+.mypage_content{
+
+}
+
 .schedule_entire{
  display: flex;
  align-items: center;
  flex-direction: column;
+ width: 100vw;
+ height: 100vh;
+ background-color: #FFFFDD;
 }
 
 

@@ -38,7 +38,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
+    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place).merge(user_id: current_user.id)
   end
 
   def move_to_index
