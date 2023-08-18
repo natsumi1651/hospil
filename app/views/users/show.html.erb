@@ -2,46 +2,56 @@
   <div class ="mypage_flex">
 
       <div class="mypage_info">
-      登録情報
-       <div class="mypage_content">
-        <%= @user.nickname%> 
-       </div>
-       <div class="mypage_content">
-        <%= @user.email %> 
-       </div>
-       <div class="mypage_content"> 
-        <%= @user.sir_name%> 
-       </div>
-       <div class="mypage_content">
-        <%= @user.first_name%> 
-       </div>
-       <div class="mypage_content">
-        <%= @user.phone_number%> 
-       </div>
-       <div class="mypage_content">
-        <%= @user.address %> 
+       <div class="mypage_contents">
+        <div class="mypage_sidetop">登録情報</div>
+        <div class="mypage_content">
+          <b>ニックネーム：</b><%= @user.nickname%> 
+        </div>
+        <div class="mypage_content">
+          <b>Eメール:</b><%= @user.email %> 
+        </div>
+        <div class="mypage_content"> 
+          <b>苗字:</b><%= @user.sir_name%> 
+        </div>
+        <div class="mypage_content">
+          <b>名前:</b><%= @user.first_name%> 
+        </div>
+        <div class="mypage_content">
+          <b>電話番号:</b><%= @user.phone_number%> 
+        </div>
+        <div class="mypage_content">
+          <b>住所:</b><%= @user.address %> 
+        </div>
+        <div class="schedule_button">
+         <a href=#, class="schedule_content">変更</a> 
+        </div>
        </div>
       
       </div>
 
       <div class = "schedule_entire">
-            <div class="third_statement">＝過去の予約一覧＝</div><br>
-             <p><%= @nickname %>さんの投稿一覧</p>
-              <% @requests.each do |request| %>
-                
-                <div class = "schedule_bracket">タイトル：
-                    <%= request.title %>
-                </div>
-
-                <div class = "schedule_bracket">
-                  予約日:<%= request.date %>
-                </div>
-                  
-                    <div class="schedule_button">
-                      <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
-                    </div> 
-              
-              <% end %>   
+            <div class="schedule_statement">＝過去の予約一覧＝</div><br>
+             
+            <% @requests.each do |request| %>
+              <div class="each_schedule">
+              <div class = "schedule_bracket">訪問依頼日：
+                  <%= request.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+              <div class = "schedule_bracket">タイトル：
+                  <%= request.title %>
+              </div>
+              <div class = "schedule_bracket">
+                予約日:<%= request.date %>
+              </div>
+              <div class = "schedule_bracket">
+                希望時間:<%= request.expected_length %>
+              </div>
+            
+              <div class="schedule_button">
+                <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
+              </div> 
+              </div>
+            <% end %>   
       </div>
   </div>
 <%# </div> %>

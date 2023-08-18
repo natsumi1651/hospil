@@ -147,12 +147,28 @@ a {
 .mypage_info{
   width: 400px;
   height: 100vh;
-  background-color: #F5DEB3;
+  background-color: #CCCC99;
 
+}
+
+.mypage_sidetop{
+
+}
+
+.mypage_contents{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 30px;
 }
 
 .mypage_content{
 
+}
+.schedule_statement{
+font-size: 20px;
+font-weight: bolder;
+margin-top: 20px
 }
 
 .schedule_entire{
@@ -164,9 +180,18 @@ a {
  background-color: #FFFFDD;
 }
 
+.each_schedule{
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-top: 30px;
+
+}
 
 .schedule_bracket {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
   padding-bottom: 20px;
 }
