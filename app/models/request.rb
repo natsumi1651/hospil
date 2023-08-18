@@ -7,4 +7,6 @@ class Request < ApplicationRecord
   validates :expected_place, presence: true
   
   belongs_to :user
+  has_many :comments
+  
 end

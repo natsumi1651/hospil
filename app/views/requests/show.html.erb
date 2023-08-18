@@ -1,6 +1,6 @@
 <div class="body_entire">
   <div class ="body_flex">
-    <div class="form_entire">
+       <div class="form_entire">
           <div class ="entry_title">＜予約詳細＞</div>
                   <div class="section_title">件名:
                    <div class="show_section">              
@@ -36,10 +36,23 @@
                     <div class="schedule_button">
                       <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
                     </div>
-                  <% end %>
-            
+                  <% end %>           
           </div>
-    </div>
+       </div>
+
+       <div class="comment_form">
+              <% if user_signed_in? %>
+                <%= form_with(model: [@request], local: true) do |form| %>
+                  <%= form.text_area :text, placeholder: "コメントする", class: "comment_text", rows: "4" %>
+                  <div class="schedule_button">
+                   <%= form.submit "SEND", class: "schedule_content" %>
+                  </div>
+                <% end %>
+              <% else %>
+                <strong><p>※※※ コメントするには新規登録/ログインしてください。。 ※※※</p></strong>
+              <% end %>
+       </div>
+
    </div>
  </div>
 

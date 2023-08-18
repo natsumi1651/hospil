@@ -345,3 +345,19 @@ margin-top: 20px
   align-items: center;
   justify-content: center;
 }
+
+.comment_form{
+  width: 100vw;
+  background-color: #CCCC99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.comment_text{
+  width: 1000px;
+
+}

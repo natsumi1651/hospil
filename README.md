@@ -59,4 +59,6 @@ Things you may want to cover:
 | ------------------- | --------------- | -------------------------------- |
 | text                | text            | null: false                      |
 | request_id          | text            | null: false, foreign_key: true   |
+| user_id             | references      | null: false, foreign_key: true   |
+
 - belongs_to :request
