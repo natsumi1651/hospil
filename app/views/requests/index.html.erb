@@ -28,24 +28,7 @@
         <div class="third_statement">詳しくはこちらをご参照ください。</div>
     </div><br>
 
-    <div class = "schedule_entire">
-        <div class="third_statement">＝過去の予約一覧＝</div><br>
-          <% @requests.each do |request| %>
-            
-             <div class = "schedule_bracket">タイトル：
-                <%= request.title %>
-             </div>
-
-             <div class = "schedule_bracket">
-              予約日:<%= request.date %>
-             </div>
-              
-                <div class="schedule_button">
-                   <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
-                </div> 
-                
-          <% end %>   
-     </div>
+   
       
   </div>
 </div>

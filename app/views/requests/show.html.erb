@@ -28,14 +28,15 @@
                     </div>
                   </div>
 
-
-                  <div class="schedule_button">
-                    <%= link_to '削除', request_path(@request), class: "schedule_content", data: { turbo_method: :delete } %>
-                  </div> <br>
-                  
-                  <div class="schedule_button">
-                    <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
-                  </div>
+                  <% if user_signed_in? && current_user.id == @request.user_id %>
+                    <div class="schedule_button">
+                      <%= link_to '削除', request_path(@request), class: "schedule_content", data: { turbo_method: :delete } %>
+                    </div> <br>
+                    
+                    <div class="schedule_button">
+                      <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
+                    </div>
+                  <% end %>
             
           </div>
     </div>

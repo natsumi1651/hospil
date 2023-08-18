@@ -77,7 +77,7 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
+  margin-top: 40px;
 }
 
 .top_statement{
@@ -138,15 +138,60 @@ a {
   margin-top: 50px;
 }
 
+.mypage_flex{
+ display: flex;
+ 
+
+}
+
+.mypage_info{
+  width: 400px;
+  height: 100vh;
+  background-color: #CCCC99;
+
+}
+
+.mypage_sidetop{
+
+}
+
+.mypage_contents{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-left: 30px;
+}
+
+.mypage_content{
+
+}
+.schedule_statement{
+font-size: 20px;
+font-weight: bolder;
+margin-top: 20px
+}
+
 .schedule_entire{
  display: flex;
  align-items: center;
  flex-direction: column;
+ width: 100vw;
+ height: 100vh;
+ background-color: #FFFFDD;
 }
 
+.each_schedule{
+  width: 600px;
+  height: 400px;
+  background-color: #fff;
+  margin-bottom: 40px;
+  padding-left: 20px;
+  padding-top: 30px;
+
+}
 
 .schedule_bracket {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: bolder;
   padding-bottom: 20px;
 }
@@ -260,4 +305,43 @@ a {
   font-size: 20px;
   padding: 10px;
   border: 1px solid #000;
+}
+
+.login_form{
+  width: 350px;
+  height: 200px;
+  background: #fff;
+  margin-top: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login_title{
+  font-size: 15px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+
+}
+
+.login_field{
+  font-size: 12px;
+
+
+}
+
+.login_content{
+  width: 250px;
+  height: 20px;
+  margin-bottom: 5px;
+}
+
+.signup_form{
+  margin-top: 30px;
+  background-color: #fff;
+  width: 450px;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
