@@ -2,7 +2,7 @@ class RequestsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    @requests = Request.all
+    @requests = Request.includes(:user)
   end
 
 
