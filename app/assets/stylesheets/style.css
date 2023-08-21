@@ -140,13 +140,14 @@ a {
 
 .mypage_flex{
  display: flex;
+ margin-bottom: 60px;
+ height: 100vh;
  
 
 }
 
 .mypage_info{
   width: 400px;
-  height: 100vh;
   background-color: #CCCC99;
 
 }
@@ -176,17 +177,18 @@ margin-top: 20px
  align-items: center;
  flex-direction: column;
  width: 100vw;
- height: 100vh;
+
  background-color: #FFFFDD;
 }
 
 .each_schedule{
   width: 600px;
-  height: 400px;
+  
   background-color: #fff;
   margin-bottom: 40px;
   padding-left: 20px;
   padding-top: 30px;
+  padding-bottom: 30px;
 
 }
 
@@ -419,4 +421,33 @@ margin: 10px;
   text-decoration: none;
   color: #fff;
   font-weight: bolder;
+}
+
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
+.search-form{
+  width: 900px;
+  height: 60px;
+}
+
+.search-input{
+  width: 800px;
+  height: 50px;
+}
+
+.search-btn{
+  width: 50px;
+  height: 50px;  
 }

@@ -20,17 +20,18 @@
          <%= image_tag("hospil_logo.png", alt: "会社ロゴ", class: "company_logo") %>
        <% end %>
 
+        <%= form_with(url: search_requests_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "予約を検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+
+
         <div class="top_button">
             <%# <a class="top_button_content" href=#>よくあるご質問</a> %>
-            <%# <a class="top_button_content" href=#>予約履歴を見る</a> %>
             <% if user_signed_in? %>
               <%= link_to "予約する", new_request_path, class: "top_button_content" %>
-              <%# <a class="top_button_content" href=#>マイページ</a> %>
                <%= link_to "マイページ", "/users/#{current_user.id}",class: "top_button_content" %>
               <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "top_button_content" %>  
-
-
-
             <% else %>
                <%= link_to "ログイン", new_user_session_path, class: "top_button_content" %> 
                <%= link_to "新規登録", new_user_registration_path, class: "top_button_content" %> 
