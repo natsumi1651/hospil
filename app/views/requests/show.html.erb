@@ -58,7 +58,8 @@
                <div class="comment_location">
                   <div class="comment_left">
                     <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
-                    ユーザー名：<%= link_to " #{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
+                    <%# ユーザー名：<%= link_to " #{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
+                    ユーザー名：<a href="/users/<%= comment.user_id %>" class="comment_content"><%= comment.user.nickname %> さん</a>
                     <div class="comment_content">
                       コメント：<%= comment.text%>
                     </div>
