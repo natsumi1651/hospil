@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   resources :users, only: :show
   root to: 'requests#index'
   resources :requests do
-    resources :comments, only: :create
+    resources :comments, only: [:create, :destroy]
   end
 end

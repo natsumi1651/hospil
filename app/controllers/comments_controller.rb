@@ -3,14 +3,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     if @comment.save  
      redirect_to "/requests/#{@comment.request.id}"
-   
-     end
-      
+     end  
   end
 
-  # new_comment = Comment.create(comment_params)
-  # redirect_to "/requests/#{comment.request.id}"
+  
 
+  def destroy
+   comment = Comment.find(params[:id])
+   comment.destroy
+  #  redirect_to "/requests/#{@comment.request.id}"
+   redirect_to request_path(comment.request)  
+
+   end
 
 
   private
