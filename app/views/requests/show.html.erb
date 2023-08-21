@@ -1,7 +1,10 @@
 <div class="body_entire">
   <div class ="body_flex">
-    <div class="form_entire">
+       <div class="form_entire">
           <div class ="entry_title">＜予約詳細＞</div>
+                  <div class = "schedule_bracket">訪問依頼日：
+                    <%= @request.created_at.strftime('%Y/%m/%d %H:%M') %>
+                   </div>
                   <div class="section_title">件名:
                    <div class="show_section">              
                     <%= @request.title %>
@@ -36,10 +39,51 @@
                     <div class="schedule_button">
                       <%= link_to '編集', edit_request_path(@request), class: "schedule_content" %> 
                     </div>
-                  <% end %>
-            
+                  <% end %>           
           </div>
-    </div>
+       </div>
+        <div class="comment_view_entire">
+          <div class ="comment_view">
+          <h4>＜コメント一覧＞</h4>
+            <% @comments.each do |comment| %>
+             <h4>＜コメント＞</h4>
+               <div class="comment_location">
+                  <div class="comment_left">
+                    <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+                    ユーザー名：<%= link_to " #{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
+                    <div class="comment_content">
+                      コメント：<%= comment.text%>
+                    </div>
+                  </div>
+                  <div class="comment_right">
+                      <div class="comment_button">
+                        <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content", data: { turbo_method: :delete } %> 
+                      </div> <br>
+                        
+                      <%# <div class="comment_button">
+                        <%= link_to '編集', edit_request_path(@request), class: "comment_button_content" %> 
+                      <%# </div>  %>
+                  </div>
+               </div>
+                      
+
+            <% end %>
+        </div>
+       </div>
+
+       <div class="comment_form">
+              <% if user_signed_in? %>
+                <%= form_with(model: [@request, @comment], local: true) do |form| %>
+                  <%= form.text_area :text, placeholder: "コメントする", class: "comment_text", rows: "4" %>
+                  <div class="schedule_button">
+                   <%= form.submit "SEND", class: "schedule_content" %>
+                  </div>
+                <% end %>
+              <% else %>
+                <strong><p>※※※ コメントするには新規登録/ログインしてください。。 ※※※</p></strong>
+              <% end %>
+       </div>
+
    </div>
  </div>
 

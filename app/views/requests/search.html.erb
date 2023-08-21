@@ -1,0 +1,20 @@
+<div class="body_entire">
+  <% @requests.each do |request| %>
+    <div class="body_flex">
+      <div class="form_entire">
+        <div class="entry_title">＜予約詳細＞</div>
+        <div class="schedule_bracket">訪問依頼日：<%= request.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+        <div class="section_title">件名:</div>
+        <div class="show_section"><%= request.title %></div>
+        <div class="section_title">希望日時:</div>
+        <div class="show_section"><%= request.date %></div>
+        <div class="section_title">主訴や、詳細内容を入れてください:</div>
+        <div class="show_section"><%= request.description %></div>
+        <div class="section_title">希望時間/2時間:</div>
+        <div class="show_section"><%= request.expected_length %></div>
+        <div class="section_title">派遣先住所:</div>
+        <div class="show_section"><%= request.expected_place %></div>
+      </div>
+    </div>
+  <% end %>
+</div>

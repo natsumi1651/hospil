@@ -56,7 +56,7 @@ a {
   height: 100vh;
   font-size: 10px;
   background-color: #FFFFDD;
-  padding-bottom: 150px;
+  
   overflow: auto;
 }
 
@@ -140,14 +140,16 @@ a {
 
 .mypage_flex{
  display: flex;
+ margin-bottom: 60px;
+
  
 
 }
 
 .mypage_info{
   width: 400px;
-  height: 100vh;
   background-color: #CCCC99;
+
 
 }
 
@@ -163,6 +165,7 @@ a {
 }
 
 .mypage_content{
+  font-size: 20px;
 
 }
 .schedule_statement{
@@ -176,17 +179,18 @@ margin-top: 20px
  align-items: center;
  flex-direction: column;
  width: 100vw;
- height: 100vh;
+
  background-color: #FFFFDD;
 }
 
 .each_schedule{
   width: 600px;
-  height: 400px;
+  
   background-color: #fff;
   margin-bottom: 40px;
   padding-left: 20px;
   padding-top: 30px;
+  padding-bottom: 30px;
 
 }
 
@@ -344,4 +348,108 @@ margin-top: 20px
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.comment_form{
+  width: 100vw;
+  background-color: #CCCC99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+}
+
+.comment_text{
+  width: 1000px;
+
+}
+
+.comment_view_entire{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment_view{
+  width: 800px;
+  background-color: #DDDDDD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px; 
+}
+
+.comment_content{
+  /* background-color: #fff;
+  width: 750px;
+  font-size: 15px; */
+}
+
+.comment_location{
+  width: 750px;
+  display: flex;
+  background-color: #fff;
+  font-size: 15px;
+  
+}
+
+.comment_left{
+width: 700px;
+margin: 10px;
+}
+
+.comment_right{
+  width: 50px;
+  margin: 10px;
+
+}
+
+.comment_button{
+  background-color: #663300;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.comment_button_content{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.search-form {
+  text-align: center;
+  padding-top: 32px;
+}
+
+.search-form .search-input {
+  width: 30%;
+  margin-right: 10px;
+}
+
+.search-form .search-btn {
+  width: 10%;
+}
+
+.search-form{
+  width: 900px;
+  height: 60px;
+}
+
+.search-input{
+  width: 800px;
+  height: 50px;
+}
+
+.search-btn{
+  width: 50px;
+  height: 50px;  
 }

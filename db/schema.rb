@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_18_025035) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_050810) do
+  create_table "comments", charset: "utf8", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "request_id"
+    t.text "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "requests", charset: "utf8", force: :cascade do |t|
     t.string "title", null: false
     t.string "date", null: false

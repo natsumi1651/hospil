@@ -1,8 +1,8 @@
 class RequestsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+ before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @requests = Request.includes(:user)
+    @requests = Request.all
   end
 
 
@@ -11,13 +11,22 @@ class RequestsController < ApplicationController
   end
 
   def create
-    @request = Request.create(request_params)
-    redirect_to '/'
+ 
+    @request = current_user.requests.new(request_params)
+    # @request = Request.create(request_params)
+    if @request.save
+       redirect_to '/'
+    else
+    render :new
+    end
   end
+
+
 
   def show
     @request = Request.find(params[:id])
-    
+    @comment = Comment.new
+    @comments = @request.comments.includes(:user)
   end
 
   def destroy
@@ -36,15 +45,20 @@ class RequestsController < ApplicationController
     redirect_to root_path
   end
 
-  private
-  def request_params
-    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place).merge(user_id: current_user.id)
+  def search
+    @requests = current_user.requests.search(params[:keyword])
   end
 
+
+  private
+  def request_params
+    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
+  end
+ 
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
     end
   end
-  
+
 end
