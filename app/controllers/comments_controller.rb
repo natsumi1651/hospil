@@ -1,20 +1,16 @@
 class CommentsController < ApplicationController
   def create
-    Comment.create(comment_params)
-    redirect_to "/requests/#{comment.request.id}"
-    # @request= Request.find(params[:id])
-    # @comment=Comment.new(comment_params)
-    #   if @comment.save  
-    #     redirect_to "/requests/#{comment.request.id}"
-    #   end
+    @comment = Comment.new(comment_params)
+    if @comment.save  
+     redirect_to "/requests/#{@comment.request.id}"
+   
+     end
       
   end
 
-  # def create
-  #   Comment.create(comment_params)
-  #   redirect_to :index
-  #   # redirect_to "/tweets/#{comment.tweet.id}" 
-  # end
+  # new_comment = Comment.create(comment_params)
+  # redirect_to "/requests/#{comment.request.id}"
+
 
 
   private
