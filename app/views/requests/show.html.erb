@@ -47,13 +47,24 @@
           <h4>＜コメント一覧＞</h4>
             <% @comments.each do |comment| %>
              <h4>＜コメント＞</h4>
-                <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
-                <%= link_to " ユーザー名：#{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
-                <div class="comment_content">
-                  コメント：<%= comment.text%>
-                </div>
-
-                
+               <div class="comment_location">
+                  <div class="comment_left">
+                    <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+                    <%= link_to " ユーザー名：#{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
+                    <div class="comment_content">
+                      コメント：<%= comment.text%>
+                    </div>
+                  </div>
+                  <div class="comment_right">
+                      <div class="comment_button">
+                            <%= link_to '削除', request_path(@request), class: "comment_button_content", data: { turbo_method: :delete } %>
+                      </div> <br>
+                        
+                      <div class="comment_button">
+                        <%= link_to '編集', edit_request_path(@request), class: "comment_button_content" %> 
+                      </div>
+                  </div>
+               </div>
                       
 
             <% end %>

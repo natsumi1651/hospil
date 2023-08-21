@@ -382,8 +382,41 @@ margin-top: 20px
 }
 
 .comment_content{
-  background-color: #fff;
+  /* background-color: #fff;
   width: 750px;
-  font-size: 15px;
+  font-size: 15px; */
+}
 
+.comment_location{
+  width: 750px;
+  display: flex;
+  background-color: #fff;
+  font-size: 15px;
+  
+}
+
+.comment_left{
+width: 700px;
+margin: 10px;
+}
+
+.comment_right{
+  width: 50px;
+  margin: 10px;
+
+}
+
+.comment_button{
+  background-color: #663300;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.comment_button_content{
+  text-decoration: none;
+  color: #fff;
+  font-weight: bolder;
 }
