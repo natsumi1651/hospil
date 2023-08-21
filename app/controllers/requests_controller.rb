@@ -1,5 +1,6 @@
 class RequestsController < ApplicationController
  before_action :move_to_index, except: [:index, :show, :search]
+ before_action :no_authority, only: :edit
 
   def index
     @requests = Request.all
@@ -42,7 +43,7 @@ class RequestsController < ApplicationController
   def update
     request = Request.find(params[:id])
     request.update(request_params)
-    redirect_to root_path
+    redirect_to "/users/#{current_user.id}"
   end
 
   def search
@@ -61,4 +62,11 @@ class RequestsController < ApplicationController
     end
   end
 
+  def no_authority
+    @request = Request.find(params[:id])
+    if @request.user != current_user
+      redirect_to root_path
+     end
+  end
+  
 end
