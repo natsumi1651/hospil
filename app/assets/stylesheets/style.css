@@ -56,7 +56,7 @@ a {
   height: 100vh;
   font-size: 10px;
   background-color: #FFFFDD;
-  padding-bottom: 150px;
+  
   overflow: auto;
 }
 
@@ -141,7 +141,7 @@ a {
 .mypage_flex{
  display: flex;
  margin-bottom: 60px;
- height: 100vh;
+
  
 
 }
@@ -149,6 +149,7 @@ a {
 .mypage_info{
   width: 400px;
   background-color: #CCCC99;
+
 
 }
 
@@ -164,6 +165,7 @@ a {
 }
 
 .mypage_content{
+  font-size: 20px;
 
 }
 .schedule_statement{

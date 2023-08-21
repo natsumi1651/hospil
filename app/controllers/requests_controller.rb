@@ -46,8 +46,7 @@ class RequestsController < ApplicationController
   end
 
   def search
-    @requests = Request.search(params[:keyword])
-    
+    @requests = current_user.requests.search(params[:keyword])
   end
 
 
