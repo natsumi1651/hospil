@@ -9,6 +9,12 @@
          <div class="section_title">希望日時:
           <%= form.text_field :date, placeholder: "希望日時: 『本日、2023/08/24。』", class: "entry_section" %>
          </div>
+
+
+         <div class="section_title">カテゴリー:
+          <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
+        </div>
+
          <div class="section_title">主訴や、詳細内容を入れてください:
           <%= form.text_area :description, placeholder: "『3歳、男の子です。日曜日に小児科でインフルエンザと言われ、保育所で預かれないと言われました。午後に急用があるため看護をお願いしたいです。』", rows: "20", class: "entry_section" %>
          </div>

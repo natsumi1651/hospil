@@ -454,3 +454,12 @@ margin: 10px;
   width: 50px;
   height: 50px;  
 }
+
+/* 追加実装 */
+.category-select{
+    height: 50px;
+    width: 250px;
+    font-size: 20px;
+}
+
+  

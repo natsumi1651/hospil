@@ -16,9 +16,9 @@ class RequestsController < ApplicationController
     @request = current_user.requests.new(request_params)
     # @request = Request.create(request_params)
     if @request.save
-       redirect_to '/'
+       redirect_to "/users/#{current_user.id}"
     else
-    render :new
+    render :new, status: :unprocessable_entity
     end
   end
 
@@ -53,7 +53,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
+    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place, :category_id)
   end
  
   def move_to_index
@@ -68,5 +68,5 @@ class RequestsController < ApplicationController
       redirect_to root_path
      end
   end
-  
+
 end
