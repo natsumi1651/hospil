@@ -1,8 +1,6 @@
 class RequestsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
-
   def index
-    @requests = Request.includes(:user)
+    @requests = Request.all
   end
 
 
@@ -17,7 +15,8 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
-    
+    @comment = Comment.new
+    @comments = @request.comments.includes(:user)
   end
 
   def destroy
@@ -38,13 +37,7 @@ class RequestsController < ApplicationController
 
   private
   def request_params
-    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place).merge(user_id: current_user.id)
+    params.require(:request).permit(:title, :date, :description, :expected_length, :expected_place)
   end
 
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
-  
 end

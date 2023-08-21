@@ -361,3 +361,29 @@ margin-top: 20px
   width: 1000px;
 
 }
+
+.comment_view_entire{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comment_view{
+  width: 800px;
+  background-color: #DDDDDD;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 20px;
+
+}
+
+.comment_content{
+  background-color: #fff;
+  width: 750px;
+  font-size: 15px;
+
+}

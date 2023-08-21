@@ -2,6 +2,9 @@
   <div class ="body_flex">
        <div class="form_entire">
           <div class ="entry_title">＜予約詳細＞</div>
+                  <div class = "schedule_bracket">訪問依頼日：
+                    <%= @request.created_at.strftime('%Y/%m/%d %H:%M') %>
+                   </div>
                   <div class="section_title">件名:
                    <div class="show_section">              
                     <%= @request.title %>
@@ -39,10 +42,22 @@
                   <% end %>           
           </div>
        </div>
+        <div class="comment_view_entire">
+          <div class ="comment_view">
+            <h4>＜コメント一覧＞</h4>
+            <% @comments.each do |comment| %>
+                <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+                <%= link_to " ユーザー名：#{comment.user.nickname} さん", "/users/#{comment.user_id}", class: "comment_content" %>
+                <div class="comment_content">
+                  コメント：<%= comment.text%>
+                </div>
+            <% end %>
+        </div>
+       </div>
 
        <div class="comment_form">
               <% if user_signed_in? %>
-                <%= form_with(model: [@request], local: true) do |form| %>
+                <%= form_with(model: [@request, @comment], local: true) do |form| %>
                   <%= form.text_area :text, placeholder: "コメントする", class: "comment_text", rows: "4" %>
                   <div class="schedule_button">
                    <%= form.submit "SEND", class: "schedule_content" %>
