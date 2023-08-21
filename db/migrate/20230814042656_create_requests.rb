@@ -3,6 +3,7 @@ class CreateRequests < ActiveRecord::Migration[7.0]
     create_table :requests do |t|
       t.string :title, null: false
       t.string :date, null: false
+      t.integer :category_id, null: false
       t.text :description, null: false
       t.string :expected_length, null: false
       t.text :expected_place, null: false

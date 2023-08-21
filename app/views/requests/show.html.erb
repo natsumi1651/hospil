@@ -15,6 +15,14 @@
                     <%= @request.date %>
                    </div>
                   </div>
+
+                  <div class="section_title">カテゴリー:
+                    <div class="show_section"> 
+                     <% category = Category.find_by(id: @request.category_id) %><%= category&.name %>
+                    </div>
+                  </div>
+
+
                   <div class="section_title">主訴や、詳細内容を入れてください:
                    <div class="show_section"> 
                     <%= @request.description %> 
