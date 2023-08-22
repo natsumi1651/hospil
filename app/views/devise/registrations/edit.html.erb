@@ -1,43 +1,59 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+ <div class="body_entire">
+  <div class ="body_flex"> 
+     <div class="signup_form">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+      <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %> 
+      <%# <%= form_with model: @user, url: user_registration_path, local: true do |f| %> 
+      <%= form_with(model: @user, url: user_path(@user), method: :patch) do |form| %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="login_title">Sign up</div>
+
+          <div class="login_field">
+            <%= form.label :ニックネーム %><br />
+            <%= form.text_area :nickname, id: "nickname", class: "login_content", placeholder: "例)太郎", maxlength: "40" %>
+          </div>
+        
+          <div class="login_field">
+            <%= form.label :Eメール %><br />
+            <%= form.email_field :email, autofocus: true, autocomplete: "email", class: "login_content" %>
+          </div>
+
+
+          <div class="login_field">
+            <%= form.label :パスワード %><br />
+            <%= form.password_field :password, id: "password", placeholder: "6文字以上の半角英数字", class: "login_content" %>
+          </div>
+
+          <div class="login_field">
+            <%= form.label :確認用パスワード %><br />
+            <%= form.password_field :password_confirmation,  id: "password-confirmation", placeholder: "同じパスワードを入力して下さい", class: "login_content" %>
+          </div>
+          
+          <div class="login_field">
+            <%= form.label :苗字 %><br />
+            <%= form.text_area :sir_name, id: "last-name", placeholder: "例) 山田", class: "login_content" %>
+          </div>
+
+          <div class="login_field">
+            <%= form.label :名前 %><br />
+            <%= form.text_area :first_name, id: "first-name", placeholder: "例) 太郎", class: "login_content" %>
+          </div>
+
+          <div class="login_field">
+            <%= form.label :電話番号 %><br />
+            <%= form.text_area :phone_number, id: "phone_number", class: "login_content" %>
+          </div>
+          
+          <div class="login_field">
+            <%= form.label :住所 %><br />
+            <%= form.text_field :address, id: "address", class: "login_content" %>
+          </div>
+
+          <div class="actions">
+            <%= form.submit "情報を更新する" %>
+          </div>
+        <% end %>
+      </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+</div>

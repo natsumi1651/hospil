@@ -23,7 +23,7 @@
           <b>住所:</b><%= @user.address %> 
         </div>
         <div class="schedule_button">
-         <a href=#, class="schedule_content">変更</a> 
+         <%= link_to '変更', edit_user_registration_path, class: "schedule_content" %> 
         </div>
        </div>
       
