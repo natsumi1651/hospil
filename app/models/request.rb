@@ -7,21 +7,17 @@ class Request < ApplicationRecord
   validates :description, presence: true
   validates :expected_length, presence: true
   validates :expected_place, presence: true
-  validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
-  
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
+
   belongs_to :user
   has_many :comments
   has_one_attached :image
 
   def self.search(search)
-      if search != ""
-        Request.where('title LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")
-      else
-        Request.all
-      end
+    if search != ''
+      Request.where('title LIKE ? OR description LIKE ?', "%#{search}%", "%#{search}%")
+    else
+      Request.all
+    end
   end
-
-
-  
-  
 end

@@ -4,5 +4,4 @@ class UsersController < ApplicationController
     @nickname = current_user.nickname
     @requests = current_user.requests.order(created_at: :desc)
   end
-
 end
