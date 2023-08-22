@@ -28,7 +28,7 @@ class RequestsController < ApplicationController
     @request = Request.find(params[:id])
     @comment = Comment.new
     @comments = @request.comments.includes(:user)
-    @nickname = @comments.first&.user&.nickname
+    
   end
 
   def destroy
