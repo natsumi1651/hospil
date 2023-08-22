@@ -492,4 +492,9 @@ margin: 10px;
  font-weight: bolder;
  margin-top: 15px;
 }
-  
+
+.request-image{
+  width: 600px;
+  height: 500px;
+
+}

@@ -22,6 +22,11 @@
                     </div>
                   </div>
 
+                   <div class="section_title">添付画像:
+                    <%# <%= form.file_field :image, id: "request-image" %> 
+                    <%= image_tag @request.image.variant(resize: '500x500'), class: 'request-image' if @request.image.attached? %>
+                   </div>
+
 
                   <div class="section_title">主訴や、詳細内容を入れてください:
                    <div class="show_section"> 

@@ -12,8 +12,10 @@
 
          <div class="section_title">カテゴリー:
           <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
+         </div> 
+          <div class="section_title">添付画像:
+         <%= form.file_field :image, id: "request-image" %>
          </div>
-
          <div class="section_title">主訴や、詳細内容を入れてください:
           <%= form.text_area :description, placeholder: "『3歳、男の子です。日曜日に小児科でインフルエンザと言われ、保育所で預かれないと言われました。午後に休養があるため看護をお願いしたいです。』", rows: "20", class: "entry_section" %>
          </div>
