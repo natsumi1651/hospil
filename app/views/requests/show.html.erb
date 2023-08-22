@@ -23,7 +23,6 @@
                   </div>
 
                    <div class="section_title">添付画像:
-                    <%# <%= form.file_field :image, id: "request-image" %> 
                     <%= image_tag @request.image.variant(resize: '500x500'), class: 'request-image' if @request.image.attached? %>
                    </div>
 
@@ -57,9 +56,12 @@
        </div>
         <div class="comment_view_entire">
           <div class ="comment_view">
-          <h4>＜コメント一覧＞</h4>
+            <h4>＜コメント一覧＞</h4>
+             <p><%= "コメント数：#{@comments.count} コメント" %></p>
+
+
             <% @comments.each do |comment| %>
-             <h4>＜コメント＞</h4>
+               <h4>＜コメント＞</h4>
                <div class="comment_location">
                   <div class="comment_left">
                     <div class = "comment_content">コメント日：<%= comment.created_at.strftime('%Y/%m/%d %H:%M') %></div>
@@ -68,15 +70,17 @@
                     
                     <div class="comment_content">コメント：<%= comment.text%></div>
                   </div>
-                  <div class="comment_right">
-                      <div class="comment_button">
-                        <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content", data: { turbo_method: :delete } %> 
-                      </div> <br>
-                        
-                      <%# <div class="comment_button">
-                        <%= link_to '編集', edit_request_path(@request), class: "comment_button_content" %> 
-                      <%# </div>  %>
-                  </div>
+                   <% if comment.user == current_user %>
+                    <div class="comment_right">
+                        <div class="comment_button">
+                          <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content", data: { turbo_method: :delete } %> 
+                        </div> <br>
+                          
+                        <%# <div class="comment_button">
+                          <%= link_to '編集', edit_request_path(@request), class: "comment_button_content" %> 
+                        <%# </div> %>
+                    </div>
+                   <% end %>
                </div>
                       
 
