@@ -71,11 +71,11 @@ https://hospil-production.onrender.com
 [![Image from Gyazo](https://i.gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7.png)](https://gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7) 
 
 ## 発環境  
-*フロントエンド  
-*バックエンド  
-*インフラ  
-*テキストエディタ  
-*タスク管理  
+* フロントエンド  
+* バックエンド  
+* インフラ  
+* テキストエディタ  
+* タスク管理  
 
 ## ローカルでの動作方法  
 以下のコマンドを順に実行  
