@@ -27,7 +27,7 @@
 
 
         <div class="top_button">
-            <%# <a class="top_button_content" href=#>よくあるご質問</a> %>
+            <a class="top_button_content" href=#>よくあるご質問</a>
             <% if user_signed_in? %>
               <%= link_to "予約する", new_request_path, class: "top_button_content" %>
                <%= link_to "マイページ", "/users/#{current_user.id}",class: "top_button_content" %>
