@@ -24,7 +24,13 @@
                   </div>
 
                    <div class="section_title">添付画像:
-                    <%= image_tag @request.image.variant(resize: '500x500'), class: 'request-image' if @request.image.attached? %>
+                    <% @request.images[0..-1].each do |image| %>
+                     <% if @request.images.attached? %>
+                       <%= image_tag(image.variant(resize: '500x500'), class: 'request-image') %>
+                     <% end %>
+                      <%# <%= image_tag image.image.variant(resize: '500x500'), class: 'request-image' if @request.image.attached? %>
+                     <%# <%= image_tag @requests[0].image.variant(resize: '500x500'), class: 'request-image' if @request.image.attached? %>
+                    <%end%>
                    </div>
 
 

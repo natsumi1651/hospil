@@ -14,8 +14,7 @@
          </div>
 
          <div class="section_title">添付画像:
-         <%= form.file_field :image, id: "request-image" %>
-         
+         <%= form.file_field :images, name: 'request[images][]', data: { index: 0 }, id: "request-images", multiple: true %>
          </div>
 
          <div class="section_title">主訴や、詳細内容を入れてください:

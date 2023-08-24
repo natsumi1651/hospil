@@ -12,6 +12,7 @@ class Request < ApplicationRecord
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  has_many_attached :images
 
   def self.search(search)
     if search != ''
