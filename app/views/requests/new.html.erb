@@ -13,7 +13,7 @@
           <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
          </div>
 
-         <div class="section_title">添付画像:
+         <div class="section_title">添付画像(5枚まで投稿できます):
          <%= form.file_field :images, name: 'request[images][]', data: { index: 0 }, id: "request-images", multiple: true %>
          </div>
 
