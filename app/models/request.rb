@@ -8,10 +8,12 @@ class Request < ApplicationRecord
   validates :expected_length, presence: true
   validates :expected_place, presence: true
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
-
+  validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
+  
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
+  has_many_attached :images
 
   def self.search(search)
     if search != ''

@@ -13,9 +13,8 @@
           <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
          </div>
 
-         <div class="section_title">添付画像:
-         <%= form.file_field :image, id: "request-image" %>
-         
+         <div class="section_title">添付画像(5枚まで投稿できます):
+         <%= form.file_field :images, name: 'request[images][]', data: { index: 0 }, id: "request-images", multiple: true %>
          </div>
 
          <div class="section_title">主訴や、詳細内容を入れてください:
@@ -29,9 +28,14 @@
           <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "5", class: "entry_section" %>
           </div>
           
-          <div class="section_button">
-           <%= form.submit "SEND", class: "section_button_content" %>
-          </div> 
+          <div class="section_buttonlineup">
+              <div class="section_button_customize">
+              <%= form.submit "SEND", class: "section_button_content_customize" %>
+              </div> 
+              <div class="section_button">
+              <%= link_to "戻る", "/users/#{current_user.id}", class: "section_button_content" %>
+              </div>
+          </div>
 
       <% end %>
     </div>
