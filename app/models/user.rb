@@ -12,6 +12,9 @@ class User < ApplicationRecord
       validates :address
     end
 
+    validates :nickname, length: { maximum: 6 }
+    validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-z\d]+\z/i }
+
   has_many :requests
   has_many :comments
 end
