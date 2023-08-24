@@ -13,7 +13,9 @@
           <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: "category-select"}) %>
          </div>
 
-         <div class="section_title">添付画像(5枚まで投稿できます):
+         <div class="section_title">添付画像(5枚まで投稿できます):<br>
+         <div class="upload-ditail">複数アップロードの際は下の画像のように<br>ドラッグをして選択してください。</div>
+         <%= image_tag("pic_upload.jpg", alt: "子供部屋", class: "upload-pic") %>
          <%= form.file_field :images, name: 'request[images][]', data: { index: 0 }, id: "request-images", multiple: true %>
          </div>
 

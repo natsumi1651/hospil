@@ -572,3 +572,13 @@ margin-left: 20px;
   margin-top: 50px;
   margin-left: 60px;
 }
+
+.upload-pic{
+  width: 250px;
+  height: 180px;
+  margin-bottom: 20px;
+}
+
+.upload-ditail{
+  font-size: 10px;
+}
