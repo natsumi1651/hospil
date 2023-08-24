@@ -180,8 +180,8 @@ margin-top: 20px
  align-items: center;
  flex-direction: column;
  width: 100vw;
-
  background-color: #FFFFDD;
+ padding-bottom: 50px;
 }
 
 .each_schedule{
@@ -216,11 +216,6 @@ margin-top: 20px
   color: #fff;
   font-size: 20px; 
 }
-
-.section_button_content input[type="submit"] {
-  
-}
-
 
 
 .footer_content {
@@ -412,11 +407,6 @@ margin-top: 20px
   margin-bottom: 20px; 
 }
 
-.comment_content{
-  /* background-color: #fff;
-  width: 750px;
-  font-size: 15px; */
-}
 
 .comment_location{
   width: 750px;
@@ -489,7 +479,7 @@ margin: 10px;
 }
 
 .process{
-  margin-bottom: 250px;
+  margin-bottom: 100px;
   display: flex;
   align-items: center;
   justify-content: space-around;

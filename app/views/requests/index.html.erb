@@ -1,54 +1,83 @@
 <div class= "body_entire" >
   <div class = "body_flex">
     <div class = "main_part">
-      <div class= "statement_box">
-          <div class="top_statement">『子供が急に熱を出してしまった。仕事どうしよう…』</div>
-          <div class="sub_statement">そう思ったこと、ありませんか？</div>
+        <div class= "statement_box">
+            <div class="top_statement">『子供が急に熱を出してしまった。仕事どうしよう…』</div>
+            <div class="sub_statement">そう思ったこと、ありませんか？</div>
+            <div class="stressed_part"><span class= "companyname_emphasis">Hospil(ホスピル)</span>は、子育てに一生懸命なお父さん、お母さんのお手伝いをします。</div>
+        </div>
+        
+      <div class= "statement_detail">
+          <div class = "image_custom">
+            <%= image_tag("kidandmom.jpg", alt: "就寝", class: "top-image") %>
+          </div>
+
+          <div class ="statement_explanation">
+              
+              <div class= "sentences">・お子さんの急な体調不良の際の往診</div>
+              <div class= "sentences">・保護者不在での自宅看護</div>
+              <div class= "sentences">・急用で家を空けないといけない時の出張保育</div>
+              <div class= "sentences">・オンライン受診サービス</div>
+              <div class= "sentences">・オンライン処方箋発行サービス</div>
+              
+          </div>
       </div>
-    <div class= "statement_detail">
-        <div class = "image_custom">
-          <%= image_tag("kidandmom.jpg", alt: "就寝", class: "top-image") %>
-        </div>
+      <div class= "statement_box">
+        <div class = "highlighted_statement">これ、私たちができるんです。</div>
+          <div class="second_statement">共働きのご家庭や、さまざまなご家庭の事情があって、子育てのサポートが必要な時ってありますよね。</div>
+          <div class="second_statement"><span class= "companyname_emphasis">Hospil</span>は、そんな親御さんたちの『困った』を元に作られたサービスです。</div>
+          <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "top-image_sec") %><br>
 
-        <div class ="statement_explanation">
-            <div class="stressed_part">Hospilは、子育てに一生懸命なお父さん、お母さんのお手伝いをします。</div>
-            <div class= "sentences">・お子さんの急な体調不良の際の往診</div>
-            <div class= "sentences">・保護者不在での自宅看護</div>
-            <div class= "sentences">・急用で家を空けないといけない時の出張保育</div>
-            <div class= "sentences">・オンライン受診サービス</div>
-            <div class= "sentences">・オンライン処方箋発行サービス</div>
+          <div class="second_statement"> Hospilは安心の24時間対応です。</div><br>
+      </div><br>
+      
+
+        <div class="process">
+            <div class="process_contents">
+              <div class="process_title">＜予約を入れる＞</div>
+              <%= image_tag("checking.jpg", alt: "検温", class: "process_image") %>
+              <div class="process_explanation">登録は無料。まずはユーザー登録をして、<br>予約でオンライン診療を受けてみてください。</div>
+            </div>
+
+            <div class="process_contents">
+              <div class="process_title">＜チケット制＞</div>
+              <%= image_tag("attending.jpg", alt: "往診", class: "process_image") %>
+              <div class="process_explanation">オンライン診療を受けてみて、<br>往診/看護の必要があればチケット購入により決済。<br>料金は保険診療の３割負担額になっています。<br>料金は往診の手数料(チケット代)+診察/治療/薬代となります。</div>
+            </div>
+
+
+            <div class="process_contents">
+              <div class="process_title">＜訪問＞</div>
+              <%= image_tag("kidsroom.jpg", alt: "子供部屋", class: "process_image") %>
+              <div class="process_explanation">予約から訪問まで最長3時間で訪問できます。<br>病気でなくても一時的な保育サービスもご用意しております。<br>受付は24時間可能ですので、いつでもご相談ください。</div>
+            </div>
+          </div>
+      
+      <div class = "schedule_entire">
+            <div class="schedule_statement">＝過去の予約一覧＝</div><br>
+             
+            <% @requests.each do |request| %>
+              <div class="each_schedule">
+              <div class = "schedule_bracket">訪問依頼日：
+                  <%= request.created_at.strftime('%Y/%m/%d %H:%M') %>
+              </div>
+              <div class = "schedule_bracket">タイトル：
+                  <%= request.title %>
+              </div>
+              <div class = "schedule_bracket">
+                予約日:<%= request.date %>
+              </div>
+              <div class = "schedule_bracket">
+                希望時間:<%= request.expected_length %>
+              </div>
             
-        </div>
-    </div>
-    <div class= "statement_box">
-      <div class = "highlighted_statement">これ、私たちができるんです。</div>
-        <div class="second_statement">共働きのご家庭や、さまざまなご家庭の事情があって、子育てのサポートが必要な時ってありますよね。</div>
-        <div class="second_statement"><span class= "companyname_emphasis">Hospil(ホスピル)</span>は、そんな親御さんたちの『困った』を元に作られたサービスです。</div>
-        <%= image_tag("sleeping.jpg", alt: "おやすみ", class: "top-image_sec") %><br>
+              <div class="schedule_button">
+                <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
+              </div> 
+              </div>
+            <% end %>   
+      </div>
 
-        <div class="second_statement"> Hospil(ホスピル)は安心の24時間対応です。</div><br>
-    </div><br>
-    
-
-    <div class="process">
-        <div class="process_contents">
-          <div class="process_title">＜予約を入れる＞</div>
-          <%= image_tag("checking.jpg", alt: "検温", class: "process_image") %>
-          <div class="process_explanation">登録は無料。まずはユーザー登録をして、<br>予約でオンライン診療を受けてみてください。</div>
-        </div>
-
-        <div class="process_contents">
-          <div class="process_title">＜チケット制＞</div>
-          <%= image_tag("attending.jpg", alt: "往診", class: "process_image") %>
-          <div class="process_explanation">オンライン診療を受けてみて、<br>往診/看護の必要があればチケット購入により決済。<br>料金は保険診療の３割負担額になっています。<br>料金は往診の手数料(チケット代)+診察/治療/薬代となります。</div>
-        </div>
-
-
-        <div class="process_contents">
-          <div class="process_title">＜訪問＞</div>
-          <%= image_tag("kidsroom.jpg", alt: "子供部屋", class: "process_image") %>
-          <div class="process_explanation">予約から訪問まで最長3時間で訪問できます。<br>病気でなくても一時的な保育サービスもご用意しております。<br>受付は24時間可能ですので、いつでもご相談ください。</div>
-        </div>
     </div>
   </div>
 </div>
