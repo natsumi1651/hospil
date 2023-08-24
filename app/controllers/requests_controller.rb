@@ -29,7 +29,7 @@ class RequestsController < ApplicationController
   def destroy
     request = Request.find(params[:id])
     request.destroy
-    redirect_to root_path
+    redirect_to "/users/#{current_user.id}"
   end
 
   def edit

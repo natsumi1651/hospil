@@ -217,6 +217,10 @@ margin-top: 20px
   font-size: 20px; 
 }
 
+.section_button_content input[type="submit"] {
+  
+}
+
 
 
 .footer_content {
@@ -298,10 +302,32 @@ margin-top: 20px
 
 .section_button_content{
   font-size: 30px; 
+  color: #fff;
 }
 
-/* .input[type="submit"] {
-  /* text-decoration: none; */
+.section_button_customize{
+  width: 200px;
+  height: 80px;
+  background-color: #663300;
+  font-weight: bolder;
+  border-radius: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.section_button_customize input[type="submit"] {
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+
+}
+
+.section_button_content_customize{
+  font-size: 30px; 
+  color: #fff;
+}
 
 
 .show_section{
@@ -495,5 +521,9 @@ margin: 10px;
 .request-image{
   width: 600px;
   height: 500px;
+}
 
+.section_buttonlineup{
+  display: flex;
+  justify-content: space-between;
 }

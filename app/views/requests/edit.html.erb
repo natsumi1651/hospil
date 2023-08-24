@@ -26,11 +26,16 @@
           <div class="section_title">派遣先住所:
           <%= form.text_area :expected_place, placeholder: "スタッフの派遣先住所を入力してください。マイページの住所の場合は「ユーザー住所」。", rows: "5", class: "entry_section" %>
           </div>
-           <div class="section_button">
-           <%= form.submit "SEND", class: "section_button_content" %>
-          </div> 
 
-          <%# <%= form.submit "SEND", class: "entry_section" %> 
+          <div class="section_buttonlineup">
+              <div class="section_button_customize">
+              <%= form.submit "SEND", class: "section_button_content_customize" %>
+              </div> 
+              <div class="section_button">
+              <%= link_to "戻る", "/users/#{current_user.id}", class: "section_button_content" %>
+              </div>
+          </div>
+
       <% end %>
     </div>
   </div>
