@@ -454,11 +454,11 @@ margin: 10px;
 
 .search-form {
   text-align: center;
-  padding-top: 32px;
+  width: 250px;
 }
 
 .search-form .search-input {
-  width: 30%;
+  width: 80%;
   margin-right: 10px;
 }
 
