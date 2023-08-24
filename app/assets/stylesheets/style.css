@@ -527,3 +527,48 @@ margin: 10px;
   display: flex;
   justify-content: space-between;
 }
+
+/* よくある質問のcss */
+.question-outfield{}
+
+.question-entire{
+   /* display: flex;
+   align-items: center; */
+   /* justify-content: center; */
+}
+
+.question-each{
+  width: 80%;
+  height: 400px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  margin-left: 100px;
+  padding-left: 60px;
+}
+
+.question-contents{
+  
+
+}
+
+.question_image{
+width: 100px;
+height: 100px;
+margin-left: 20px;
+}
+
+.question-content{
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.question-font{
+  margin-left: 20px;
+  font-size: 15px;
+  
+  font-weight: bolder;
+
+}
