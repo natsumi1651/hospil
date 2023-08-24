@@ -34,8 +34,8 @@ https://hospil-production.onrender.com
 ## テスト用アカウント  
 * Basic認証パスワード:admin  
 * Basic認証ID:2222  
-* メールアドレス:aaa@aaa  
-* パスワード:aaaaaaa  
+* メールアドレス:bbb@bbb
+* パスワード:bbbbb11111  
 
 ## 利用方法
 # 目標投稿
