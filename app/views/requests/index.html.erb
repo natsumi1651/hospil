@@ -77,12 +77,8 @@
               </div>
 
                <div id="like-btn<%= request.id %>">
-                  <% if user_signed_in? && request.liked_by?(current_user)%>
-                    <%=link_to "いいね済", request_likes_path(request.id),  data: { turbo_method: :delete }, class: "request_likes" %>
-                  <% else %>
-                    <%=link_to "いいねする", request_likes_path(request.id), data: { turbo_method: :post }, class: "request_likes" %>
-                  <% end %>
-              </div>
+                  <%= render partial: "likes/like", locals: { request: request } %>
+               </div>
 
             <% end %>   
       </div>
