@@ -17,5 +17,5 @@ class User < ApplicationRecord
 
   has_many :requests
   has_many :comments
-  has_many :likes
+  has_many :likes, dependent: :destroy
 end

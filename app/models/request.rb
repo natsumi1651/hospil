@@ -14,7 +14,7 @@ class Request < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_one_attached :image
   has_many_attached :images
-  has_many :likes
+  has_many :likes, dependent: :destroy
 
   def self.search(search)
     if search != ''
@@ -28,5 +28,5 @@ class Request < ApplicationRecord
     likes.where(user_id: user.id).exists?
   end
 
-  
+
 end
