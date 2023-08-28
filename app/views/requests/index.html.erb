@@ -57,6 +57,11 @@
             <div class="schedule_statement">＝過去の予約一覧＝</div><br>
              
             <% @requests.each do |request| %>
+
+               <div id="like-btn<%= request.id %>">
+                  <%= render partial: "likes/like", locals: { request: request } %>
+               </div>
+
               <div class="each_schedule">
               <div class = "schedule_bracket">訪問依頼日：
                   <%= request.created_at.strftime('%Y/%m/%d %H:%M') %>
@@ -76,10 +81,7 @@
               </div> 
               </div>
 
-               <div id="like-btn<%= request.id %>">
-                  <%= render partial: "likes/like", locals: { request: request } %>
-               </div>
-
+               
             <% end %>   
       </div>
 
