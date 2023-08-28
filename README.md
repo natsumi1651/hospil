@@ -65,8 +65,7 @@ https://hospil-production.onrender.com
 
 
 ## データベース設計  
-[![Image from Gyazo](https://i.gyazo.com/4423f1da28da3fcf07378e3b307a6019.png)](https://gyazo.com/4423f1da28da3fcf07378e3b307a6019)
-
+[![Image from Gyazo](https://i.gyazo.com/30e92f9d8024e73ee283b3d20c738054.png)](https://gyazo.com/30e92f9d8024e73ee283b3d20c738054)
 ## 画面遷移図 
 [![Image from Gyazo](https://i.gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7.png)](https://gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7) 
 
@@ -104,6 +103,7 @@ https://hospil-production.onrender.com
 
 ### Association
 - has_many :requests
+- has_many :likes
 
 ## requestsテーブル
 | Column              | Type            | Options                          |
@@ -119,6 +119,7 @@ https://hospil-production.onrender.com
 ### Association
 - belongs_to :user
 - has_many :comments
+- has_many :likes
 
 ## commentsテーブル
 | Column              | Type            | Options                          |
@@ -127,4 +128,13 @@ https://hospil-production.onrender.com
 | request_id          | text            | null: false, foreign_key: true   |
 | user_id             | references      | null: false, foreign_key: true   |
 
+- belongs_to :request
+
+## likesテーブル
+| Column              | Type            | Options                          |
+| ------------------- | --------------- | -------------------------------- |
+| request_id          | text            | null: false, foreign_key: true   |
+| user_id             | references      | null: false, foreign_key: true   |
+
+- belongs_to :user
 - belongs_to :request
