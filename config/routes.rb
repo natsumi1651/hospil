@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
     resource :likes, only: [:create, :destroy]
   end
-  resources :questions, only: :index
+  resources :questions, only: [:index, :show]
 end
