@@ -80,12 +80,17 @@
                    <% if comment.user == current_user %>
                     <div class="comment_right">
                         <div class="comment_button">
-                          <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content", data: { turbo_method: :delete } , data: {confirm: "削除しますか？"}%> 
-                        </div> <br>
+                          <%# <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content",{ method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } } }%> 
+                        
+                        <%# <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), class: "comment_button_content", method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } } %> 
+
+                          <%# <%= button_to "削除", rabbit_weight_path(@rabbit, weight), { method: :delete, form: { data: { turbo_confirm: "本当に削除しますか？" } } } %> 
+                          <%= link_to '削除', request_comment_path(request_id: @request.id, id: comment.id), 
+                            class: "comment_button_content",
+                            method: :delete,
+                            data: { turbo_confirm: "本当に削除しますか？" } %>
+                           </div> <br>
                           
-                        <%# <div class="comment_button">
-                          <%= link_to '編集', edit_request_path(@request), class: "comment_button_content" %> 
-                        <%# </div> %>
                     </div>
                    <% end %>
                </div>

@@ -9,11 +9,13 @@ class Request < ApplicationRecord
   validates :expected_place, presence: true
   validates :category_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :images, length: { minimum: 1, maximum: 5, message: "は1枚以上5枚以下にしてください" }
+  validate :validate_images_presence
   
   belongs_to :user
   has_many :comments, dependent: :destroy
   has_one_attached :image
   has_many_attached :images
+  has_many :likes, dependent: :destroy
 
   def self.search(search)
     if search != ''
@@ -22,4 +24,16 @@ class Request < ApplicationRecord
       Request.all
     end
   end
+
+  def liked_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+ 
+  private
+
+  def validate_images_presence
+    return if images.attached?
+    errors.delete(:images)
+  end
+
 end

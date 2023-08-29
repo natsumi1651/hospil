@@ -5,14 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-
-   
     <%= javascript_importmap_tags %>
+   
   </head>
 
   <body>
+   
    <header class="header">
       <div class="head_name">
         
@@ -27,7 +26,6 @@
 
 
         <div class="top_button">
-            <%# <a class="top_button_content" href=#>よくあるご質問</a> %>
             <%= link_to "よくあるご質問", questions_path, class: "top_button_content" %>
             <% if user_signed_in? %>
               <%= link_to "予約する", new_request_path, class: "top_button_content" %>
