@@ -52,38 +52,40 @@
               <div class="process_explanation">予約から訪問まで最長3時間で訪問できます。<br>病気でなくても一時的な保育サービスもご用意しております。<br>受付は24時間可能ですので、いつでもご相談ください。</div>
             </div>
           </div>
-      
-      <div class = "schedule_entire">
-            <div class="schedule_statement">＝過去の予約一覧＝</div><br>
-             
-            <% @requests.each do |request| %>
+        
+           <% if @requests.present? %>
+            <div class = "schedule_entire">
+                  <div class="schedule_statement">＝過去の予約一覧＝</div><br>
+                  
+                  <% @requests.each do |request| %>
 
-               <div id="like-btn<%= request.id %>">
-                  <%= render partial: "likes/like", locals: { request: request } %>
-               </div>
+                    <div id="like-btn<%= request.id %>">
+                        <%= render partial: "likes/like", locals: { request: request } %>
+                    </div>
 
-              <div class="each_schedule">
-              <div class = "schedule_bracket">訪問依頼日：
-                  <%= request.created_at.strftime('%Y/%m/%d %H:%M') %>
-              </div>
-              <div class = "schedule_bracket">タイトル：
-                  <%= request.title %>
-              </div>
-              <div class = "schedule_bracket">
-                予約日:<%= request.date %>
-              </div>
-              <div class = "schedule_bracket">
-                希望時間:<%= request.expected_length %>
-              </div>
-            
-              <div class="schedule_button">
-                <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
-              </div> 
-              </div>
+                    <div class="each_schedule">
+                    <div class = "schedule_bracket">訪問依頼日：
+                        <%= request.created_at.strftime('%Y/%m/%d %H:%M') %>
+                    </div>
+                    <div class = "schedule_bracket">タイトル：
+                        <%= request.title %>
+                    </div>
+                    <div class = "schedule_bracket">
+                      予約日:<%= request.date %>
+                    </div>
+                    <div class = "schedule_bracket">
+                      希望時間:<%= request.expected_length %>
+                    </div>
+                  
+                    <div class="schedule_button">
+                      <%= link_to '詳細', request_path(request.id), class: "schedule_content" %> 
+                    </div> 
+                    </div>
 
-               
-            <% end %>   
-      </div>
+                    
+                  <% end %>   
+            </div>
+            <% end %>  
 
     </div>
   </div>
