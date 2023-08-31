@@ -67,7 +67,7 @@ https://hospil-production.onrender.com
 ## データベース設計  
 [![Image from Gyazo](https://i.gyazo.com/30e92f9d8024e73ee283b3d20c738054.png)](https://gyazo.com/30e92f9d8024e73ee283b3d20c738054)
 ## 画面遷移図 
-[![Image from Gyazo](https://i.gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7.png)](https://gyazo.com/6912f3f840cbc7b5dedf90839ad3a6d7) 
+[![Image from Gyazo](https://i.gyazo.com/adb6ed7c4796df2b8038c8acc7bbef60.png)](https://gyazo.com/adb6ed7c4796df2b8038c8acc7bbef60)
 
 ## 開発環境  
 * フロントエンド  
@@ -138,3 +138,7 @@ https://hospil-production.onrender.com
 
 - belongs_to :user
 - belongs_to :request
+
+## questionテーブル
+| Column              | Type            | Options                          |
+| ------------------- | --------------- | -------------------------------- |
